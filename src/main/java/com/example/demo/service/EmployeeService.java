@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
-import java.util.Calendar;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -17,9 +18,11 @@ public class EmployeeService {
 	@Autowired
 	private EmpRepo repo;
 
-	public void EmpAdd(Employee e) {
+	public void EmpAdd(Employee e) throws ParseException {
 		Date dt = new Date();
-		int age = dt.getYear() - e.getDob().getYear();
+		Date dob= new SimpleDateFormat("yyyy-mm-dd").parse(e.getDob());
+		System.out.println(dob+": dob");
+		int age = dt.getYear() - dob.getYear();
 		e.setAge(age);
 		repo.save(e);
 	}

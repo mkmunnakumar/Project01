@@ -16,7 +16,7 @@ public class Employee {
 	private Integer  id ;
 	private String name;
 	private String email;
-	private Date dob;
+	private String dob;
 	private Integer age;
 	private double salary;
 	private boolean status;
@@ -43,10 +43,10 @@ public class Employee {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Date getDob() {
+	public String getDob() {
 		return dob;
 	}
-	public void setDob(Date dob) {
+	public void setDob(String dob) {
 		this.dob = dob;
 	}
 	public Integer getAge() {

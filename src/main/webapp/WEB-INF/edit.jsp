@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>add_Emp</title>
+    <title>Edit Employee</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-primary bg-dark">
@@ -40,29 +41,29 @@
 				<div class="card-body">
 					<h4 class="text-center text-primary"> Edit Emp</h4>
 					
-					<form th:action="@{/update}" method="post" th:object="${emp}">
-<input type="hidden" th:value="${emp.id}" name="id">
+					<form action="/update" method="post" object="${emp}">
+					<input type="hidden" value="${emp.id}" name="id">
 					<div class="form-group">
 					<lable>Enter Full Name</lable>
-					<input type="text" class="form-control" name="name" th:value="${emp.name}">
+					<input type="text" class="form-control" name="name" value="${emp.name}">
 					</div>
 					<div class="form-group">
 					<lable>Enter Email</lable>
-					<input type="email" class="form-control" name="email" th:value="${emp.email}">
+					<input type="email" class="form-control" name="email" value="${emp.email}">
 					</div>
 					<div class="form-group">
 					<lable>Enter DOB</lable>
-					<input type="text" class="form-control" name="dob" th:value="${emp.dob}">
+					<input type="text" class="form-control" name="dob" value="${emp.dob}">
 					</div>
 					<div class="form-group">
 					<lable>Enter salary</lable>
-					<input type="text" class="form-control" name="salary" th:value="${emp.salary}">
+					<input type="text" class="form-control" name="salary" value="${emp.salary}">
 					</div>
 					<div class="form-group">
 					<lable for="status">Status</lable>
 					<select name="status" id="status">
-					<option th:value=true>Active</option>
-					<option th:value=false>InActive</option>
+					<option value=true>Active</option>
+					<option value=false>InActive</option>
 					</select>
 					</div>
 					<button class="btn btn-primary btn-block">Submit</button>
@@ -74,13 +75,6 @@
 </div>
 
 		<!--body-->
-
-
-
-
-
- 
-
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
