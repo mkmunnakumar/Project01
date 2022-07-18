@@ -46,7 +46,7 @@
 			var name = document.getElementById("nameerr").value;
 			var email = document.getElementById("emailerr").value;
 			var salary = document.getElementById("salaryerr").value;
-			//var validEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+	
 			//Name validation
 			if (name == "") {
 				document.getElementById("Name").innerHTML = "Name is required";
