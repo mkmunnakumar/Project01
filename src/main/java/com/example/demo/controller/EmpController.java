@@ -34,12 +34,12 @@ public class EmpController {
 //	        return mv;
 //	    }
 	@GetMapping("/")
-	public ModelAndView home(Model model)
+	public ModelAndView home()
 	{	
 		List<Employee> emp= service.getAllEmp();
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("emp",emp);
-		mv.addObject("model",model);
+		//mv.addObject("model",model);
 		mv.setViewName("welcome");
 		return mv;	
 	}

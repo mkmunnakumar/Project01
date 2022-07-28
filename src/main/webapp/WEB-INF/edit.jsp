@@ -30,6 +30,35 @@
     
   </div>
 </nav>
+	<script type="text/javascript">
+		function validate() {
+			
+			var name = document.getElementById("nameerr").value;
+			var email = document.getElementById("emailerr").value;
+			var salary = document.getElementById("salaryerr").value;
+	
+			//Name validation
+			if (name == "") {
+				document.getElementById("Name").innerHTML = "Name is required";
+				return false;
+			}
+
+			//Email validation
+			if(email == ""){
+				document.getElementById("Email").innerHTML = "Email is required";
+				return false;
+			}
+			
+			//salary validation
+			if (salary == "") {
+				document.getElementById("Salary").innerHTML = "Salary is required";
+				return false;
+			} else if (isNaN(salary)) {
+				document.getElementById("Salary").innerHTML = "Salary is only in Number";
+				return false;
+			}
+		}
+	</script>
 
 
 
@@ -41,7 +70,7 @@
 				<div class="card-body">
 					<h4 class="text-center text-primary"> Edit Emp</h4>
 					
-					<form action="/update" method="post" object="${emp}">
+					<form action="/update" method="post" onsubmit="return validate()" object="${emp}">
 					<input type="hidden" value="${emp.id}" name="id">
 					<div class="form-group">
 					<lable>Enter Full Name</lable>
